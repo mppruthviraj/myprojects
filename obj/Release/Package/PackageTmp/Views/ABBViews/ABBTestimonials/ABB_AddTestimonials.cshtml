@@ -1,0 +1,299 @@
+﻿@model ABB_Portal.Models.ABBEntityModels.ABBModels.ABBTestimonials
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="main-wrapper">
+    <!-- ============================================================== -->
+    <!-- Topbar header - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index-2.html">
+                    <!-- Logo icon --><b>
+                        <!-- Dark Logo icon -->
+                        <img src="~/Content/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                        <!-- Light Logo icon -->
+                        <img src="~/Content/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                    </b>
+                    <span>
+                        <img src="~/Content/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                    </span>
+                </a>
+            </div>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav mr-auto mt-md-0">
+                    <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                    <li class="nav-item m-l-10"> &nbsp;</li>
+                </ul>
+                <ul class="navbar-nav my-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/Content/assets/images/users/profile.png" alt="user" class="profile-pic" /></a>
+                        <div class="dropdown-menu dropdown-menu-right scale-up">
+                            <ul class="dropdown-user">
+                                <li><a href="login.html"><i class="fa fa-power-off"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- ============================================================== -->
+    <!-- End Topbar header -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <aside class="left-sidebar">
+        <div class="scroll-sidebar">
+            <div class="user-profile">
+                <div class="profile-img">
+                    <img src="~/Content/assets/images/users/profile.png" alt="user" />
+                    <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="nav-devider"></li>
+
+                    <li>
+                        <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Testimonials</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li></li>
+                            <li><a class="has-arrow waves-effect waves-dark" href="@Url.Action("ViewTestimonials", "ABBTestimonials")" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">View Testimonials</span></a>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Categories</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="#">View Categories</a></li>
+                            <li><a href="#">Add Category</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sub-Categories</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="#">View Sub-Categories</a></li>
+                            <li><a href="#">Add Sub-Category</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Line Of Business</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="#">View LOBs'</a></li>
+                            <li><a href="#">Add LOB</a></li>
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <!-- ============================================================== -->
+    <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- Page wrapper  -->
+    <!-- ============================================================== -->
+    <div class="page-wrapper">
+        <!-- ============================================================== -->
+        <!-- Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <div class="row page-titles">
+            <div class="col-md-5 align-self-center">
+                <h3 class="text-themecolor">Add Testimonial</h3>
+            </div>
+            <div class="col-md-7 align-self-center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item">Testimonials</li>
+                    <li class="breadcrumb-item active">Add Testimonial</li>
+                </ol>
+            </div>
+            <div class="">
+                <button class="right-side-toggle waves-effect waves-light btn-inverse btn btn-circle btn-sm pull-right m-l-10"><i class="ti-settings text-white"></i></button>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <!-- Row -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card card-outline-info">
+                        <div class="card-header">
+                            <h4 class="m-b-0 text-white">Testimonials Details</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="form-horizontal form-bordered">
+                                @using (Html.BeginForm("AddTestimonials", "ABBTestimonials", new { }, FormMethod.Post,new { enctype = "multipart/form-data" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                    <div class="form-body">
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })<br/>
+                                                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Heading, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.EditorFor(model => model.Heading, new { htmlAttributes = new { @class = "form-control" } })<br />
+                                                @Html.ValidationMessageFor(model => model.Heading, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">                                            
+                                            @Html.LabelFor(model => model.Category, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.DropDownListFor(m => Model.Category, new SelectList(Enum.GetValues(typeof(ABB_Portal.Models.ABBEntityModels.ABBModels.Enums.ABB_Category))), "Select", new { @class = "form-control custom-select" })<br />
+                                                @Html.ValidationMessageFor(model => model.Category, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.SubCategory, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.DropDownListFor(model => model.SubCategory, new SelectList(Enum.GetValues(typeof(ABB_Portal.Models.ABBEntityModels.ABBModels.Enums.ABB_SubCategory))), "Select", new { @class = "form-control custom-select" })<br />
+                                                @Html.ValidationMessageFor(model => model.SubCategory, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.LineOfBusiness, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                             <div class="col-md-9">
+                                                @Html.DropDownListFor(model => model.LineOfBusiness, new SelectList(Enum.GetValues(typeof(ABB_Portal.Models.ABBEntityModels.ABBModels.Enums.ABB_LineOfBusiness))), "Select", new { @class = "form-control custom-select" })<br />
+                                                @Html.ValidationMessageFor(model => model.LineOfBusiness, "", new { @class = "text-danger" })
+                                             </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.TextAreaFor(model => model.Description, 5, 1, new { @class = "form-control" })<br />
+                                                @Html.ValidationMessageFor(model => model.Description, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })<br />
+                                                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })<br />
+                                                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row last">
+                                            @Html.LabelFor(model => model.Country, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.DropDownListFor(model => model.Country, new SelectList(Enum.GetValues(typeof(ABB_Portal.Models.ABBEntityModels.ABBModels.Enums.ABB_Country))), "Select", new { @class = "form-control custom-select" })<br />
+                                                @Html.ValidationMessageFor(model => model.Country, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Customer, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.EditorFor(model => model.Customer, new { htmlAttributes = new { @class = "form-control" } })<br />
+                                                @Html.ValidationMessageFor(model => model.Customer, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.Industry, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.EditorFor(model => model.Industry, new { htmlAttributes = new { @class = "form-control" } })<br />
+                                                @Html.ValidationMessageFor(model => model.Industry, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.CustomerNeed, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.TextAreaFor(model => model.CustomerNeed, 5, 1, new { @class = "form-control" })<br />
+                                                @Html.ValidationMessageFor(model => model.CustomerNeed, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            @Html.LabelFor(model => model.ABBSoultion, htmlAttributes: new { @class = "control-label text-right col-md-3" })
+                                            <div class="col-md-9">
+                                                @Html.TextAreaFor(model => model.ABBSoultion, 5, 1, new { @class = "form-control" })<br />
+                                                @Html.ValidationMessageFor(model => model.ABBSoultion, "", new { @class = "text-danger" })
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="control-label text-right col-md-3">ABB's Image Upload</label>
+                                            <div class="col-md-9">
+                                                <input multiple="multiple" type="file" name="ImageData" id="ImageData" class="dropify" />
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="row">
+                                                    <div class="offset-sm-3 col-md-9">
+                                                        <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Submit</button>
+                                                        <button type="button" class="btn btn-inverse">Cancel</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row -->
+            <!-- ============================================================== -->
+            <!-- End PAge Content -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- Right sidebar -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- End Right sidebar -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Container fluid  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- footer -->
+        <!-- ============================================================== -->
+        <footer class="footer">
+            © 2017 ABB
+        </footer>
+        <!-- ============================================================== -->
+        <!-- End footer -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Page wrapper  -->
+    <!-- ============================================================== -->
+</div>

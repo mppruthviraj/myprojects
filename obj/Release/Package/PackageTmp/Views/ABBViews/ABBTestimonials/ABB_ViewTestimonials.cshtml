@@ -1,0 +1,210 @@
+﻿@model IEnumerable<ABB_Portal.Models.ABBEntityModels.ABBModels.ABBTestimonials>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="main-wrapper">
+    <header class="topbar">
+        <nav class="navbar top-navbar navbar-expand-md navbar-light">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">
+                    <!-- Logo icon --><b>
+                        <!-- Dark Logo icon -->
+                        <img src="~/Content/assets/images/logo-icon.png" alt="homepage" class="dark-logo" />
+                        <!-- Light Logo icon -->
+                        <img src="~/Content/assets/images/logo-light-icon.png" alt="homepage" class="light-logo" />
+                    </b>
+                    <span>
+                        <img src="~/Content/assets/images/logo-light-text.png" class="light-logo" alt="homepage" />
+                    </span>
+                </a>
+            </div>
+            <div class="navbar-collapse">
+                <ul class="navbar-nav mr-auto mt-md-0">
+                    <li class="nav-item"> <a class="nav-link nav-toggler hidden-md-up text-muted waves-effect waves-dark" href="javascript:void(0)"><i class="mdi mdi-menu"></i></a> </li>
+                    <li class="nav-item m-l-10"> &nbsp;</li>
+                </ul>
+                <ul class="navbar-nav my-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="~/Content/assets/images/users/profile.png" alt="user" class="profile-pic" /></a>
+                        <div class="dropdown-menu dropdown-menu-right scale-up">
+                            <ul class="dropdown-user">
+                                <li><a href="login.html"><i class="fa fa-power-off"></i> Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="left-sidebar">
+        <div class="scroll-sidebar">
+            <div class="user-profile">
+                <div class="profile-img">
+                    <img src="~/Content/assets/images/users/profile.png" alt="user" />
+                    <div class="notify setpos"> <span class="heartbit"></span> <span class="point"></span> </div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul id="sidebarnav">
+                    <li class="nav-devider"></li>
+                    <li>
+                        <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-gauge"></i><span class="hide-menu">Testimonials</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li>@Html.ActionLink("Add Testimonials","NavigateToAddTestimonials", "ABBTestimonials")</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Categories</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="#">View Categories</a></li>
+                            <li><a href="#">Add Category</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Sub-Categories</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="#">View Sub-Categories</a></li>
+                            <li><a href="#">Add Sub-Category</a></li>
+
+                        </ul>
+                    </li>
+                    <li>
+                        <a class="has-arrow waves-effect waves-dark" href="#" aria-expanded="false"><i class="mdi mdi-bullseye"></i><span class="hide-menu">Line Of Business</span></a>
+                        <ul aria-expanded="false" class="collapse">
+                            <li><a href="#">View LOBs'</a></li>
+                            <li><a href="#">Add LOB</a></li>
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </aside>
+    <div class="page-wrapper">
+        <div class="row page-titles">
+            <div class="col-md-5 align-self-center">
+                <h3 class="text-themecolor">Testimonials</h3>
+            </div>
+            <div class="col-md-7 align-self-center">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="javascript:void(0)">Home</a></li>
+                    <li class="breadcrumb-item active">Dashboard</li>
+                </ol>
+            </div>
+
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">List Of Testimonials</h4>
+                            <div class="table-responsive m-t-40">
+                                <table id="myTable" class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Report ID</th>
+                                            <th>Title</th>
+                                            <th>City</th>
+                                            <th>Category</th>
+                                            <th>Sub Category</th>
+                                            <th>Line Of Business</th>
+                                            <th>Uploaded Picture</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>@Html.DisplayFor(i => item.Id)</td>
+                                                <td>@Html.DisplayFor(i => item.Title)</td>
+                                                <td>@Html.DisplayFor(i => item.City)</td>
+                                                <td>@Html.DisplayFor(i => item.Category)</td>
+                                                <td>@Html.DisplayFor(i => item.SubCategory)</td>
+                                                <td>@Html.DisplayFor(i => item.LineOfBusiness)</td>
+                                                
+                                                    @{
+                                                        string[] imageNameArray = item.ImageName.Split(',');
+                                                        string testToDisplay = string.Empty;
+                                                        for (int l = 0; l < imageNameArray.Length; l++)
+                                                        {
+
+                                                            if (string.IsNullOrEmpty(imageNameArray[l].ToString()))
+                                                            {
+                                                                testToDisplay = imageNameArray[l].ToString();
+                                                            }
+                                                            else
+                                                            {
+                                                                testToDisplay = string.Join("\n", testToDisplay, imageNameArray[l].ToString());
+                                                            }
+
+                                                        }
+
+                                                    }<td>@testToDisplay</td>
+</tr>
+                                        } 
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <footer class="footer"> © 2017 ABB </footer>
+    </div>
+</div>
+<!-- ============================================================== -->
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+        $(document).ready(function() {
+            var table = $('#example').DataTable({
+                "columnDefs": [{
+                    "visible": false,
+                    "targets": 2
+                }],
+                "order": [
+                    [2, 'asc']
+                ],
+                "displayLength": 25,
+                "drawCallback": function(settings) {
+                    var api = this.api();
+                    var rows = api.rows({
+                        page: 'current'
+                    }).nodes();
+                    var last = null;
+                    api.column(2, {
+                        page: 'current'
+                    }).data().each(function(group, i) {
+                        if (last !== group) {
+                            $(rows).eq(i).before('<tr class="group"><td colspan="5">' + group + '</td></tr>');
+                            last = group;
+                        }
+                    });
+                }
+            });
+            // Order by the grouping
+            $('#example tbody').on('click', 'tr.group', function() {
+                var currentOrder = table.order()[0];
+                if (currentOrder[0] === 2 && currentOrder[1] === 'asc') {
+                    table.order([2, 'desc']).draw();
+                } else {
+                    table.order([2, 'asc']).draw();
+                }
+            });
+        });
+    });
+    $('#example23').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            'copy', 'csv', 'excel', 'pdf', 'print'
+        ]
+    });
+</script>
+

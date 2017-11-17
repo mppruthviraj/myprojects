@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link href="@Url.Content("~/Content/assets/plugins/bootstrap/css/bootstrap.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/assets/plugins/morrisjs/morris.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/style.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/Content/css/colors/blue.css")" rel="stylesheet" type="text/css" />
+
+    <script src="@Url.Content("~/Scripts/jquery-1.10.2.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/jquery-datatables-editable/jquery.dataTables.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap/js/popper.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/bootstrap/js/bootstrap.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/jquery.slimscroll.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/waves.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/sidebarmenu.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/assets/plugins/sparkline/jquery.sparkline.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Content/js/custom.min.js")" type="text/javascript"></script>
+    @RenderSection("JavaScript", required: false)
+</head>
+<body class="fix-header card-no-border">
+   
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+    @RenderSection("JavaScript", required: false)
+</body>
+</html>

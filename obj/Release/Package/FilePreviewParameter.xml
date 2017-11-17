@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/ABBPortal" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^H:\\MyProjects\\ABB_Portal\\ABB_Portal\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^H:\\MyProjects\\ABB_Portal\\ABB_Portal\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." value="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=aspnet-ABB_Portal-20171108090015;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="H:\\MyProjects\\ABB_Portal\\ABB_Portal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="ABBPortalContext-Web.config Connection String" description="ABBPortalContext Connection String used in web.config by the application to access the database." value="Data Source=(LocalDb)\MSSQLLocalDB;Initial Catalog=ABB_PortalDB;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="H:\\MyProjects\\ABB_Portal\\ABB_Portal\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='ABBPortalContext']/@connectionString" />
+  </parameter>
+</parameters>
